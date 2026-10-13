@@ -203,15 +203,6 @@ body{
 
 /* Auth buttons */
 .header-auth{display:flex;align-items:center;gap:8px}
-.header-user{display:none;align-items:center;gap:8px}
-.user-avatar-btn{
-  width:34px;height:34px;border-radius:50%;
-  background:linear-gradient(135deg,var(--purple),var(--orange));
-  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;color:#fff;font-family:var(--font);
-  transition:transform .12s;flex-shrink:0;
-}
-.user-avatar-btn:hover{transform:scale(1.08)}
 
 #hamburger{
   padding:6px;color:var(--text-1);
@@ -248,21 +239,6 @@ body{
   font-family:var(--font);
 }
 /* Sidebar user section */
-.sidebar-user{
-  display:none;align-items:center;gap:10px;
-  padding:8px 12px;border-radius:var(--r8);
-  cursor:pointer;transition:background .12s;
-}
-.sidebar-user:hover{background:rgba(255,255,255,.06)}
-.su-avatar{
-  width:32px;height:32px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--purple),var(--orange));
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;color:#fff;
-}
-.su-info{flex:1;min-width:0}
-.su-name{font-size:12px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.su-email{font-size:10px;color:var(--sidebar-mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* ---- MAIN CONTENT ---- */
 #main{
@@ -459,53 +435,8 @@ tr:last-child td{border-bottom:none}
 .key-box{background:var(--s3);border:1px solid var(--border);border-radius:var(--r4);padding:10px 12px;font-family:var(--mono);font-size:11px;color:var(--t2);word-break:break-all;white-space:pre-wrap;margin-top:4px}
 
 /* ---- AUTH PAGES ---- */
-.auth-wrap{
-  min-height:calc(100vh - 72px);display:flex;align-items:center;justify-content:center;
-  padding:40px 24px;
-}
-.auth-card{
-  background:var(--card-bg);border-radius:16px;
-  box-shadow:0 4px 40px rgba(50,20,100,.12),0 0 0 1px var(--border);
-  padding:40px;width:100%;max-width:420px;
-}
-.auth-logo{align-items:center;gap:8px}
-.auth-logo span{font-size:17px;font-weight:700;color:var(--text-1);letter-spacing:-.3px}
-.auth-card h1{font-size:22px;font-weight:700;letter-spacing:-.4px;margin-bottom:6px;color:var(--text-1)}
-.auth-card .auth-sub{font-size:13.5px;color:var(--text-2);margin-bottom:28px}
-.sso-btn{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;padding:11px 16px;border-radius:var(--r6);
-  font-family:var(--font);font-size:13.5px;font-weight:500;
-  background:var(--surface);color:var(--text);
-  border:1.5px solid var(--border-m);cursor:pointer;
-  transition:all .12s;margin-bottom:10px;
-}
-.sso-btn:hover{border-color:var(--purple);background:var(--purple-l);color:var(--purple)}
-.auth-divider{display:flex;align-items:center;gap:10px;margin:18px 0;color:var(--t3);font-size:12px}
-.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
-.auth-note{font-size:11px;color:var(--t3);margin-top:4px;font-style:italic}
-.auth-footer{font-size:12.5px;color:var(--t2);text-align:center;margin-top:18px}
-.auth-footer a{color:var(--purple);cursor:pointer;text-decoration:none;font-weight:600}
-.auth-footer a:hover{text-decoration:underline}
 
 /* ---- ACCOUNT PAGE ---- */
-.account-wrap{padding-top:8px}
-.account-header{margin-bottom:28px}
-.account-header h1{font-size:22px;font-weight:700;letter-spacing:-.4px;margin-bottom:4px}
-.account-header p{font-size:13px;color:var(--t2)}
-.account-card{background:var(--card-bg);border-radius:var(--r12);box-shadow:var(--sh2);border:1px solid var(--border);padding:22px;margin-bottom:16px}
-.account-card h2{font-size:14px;font-weight:700;letter-spacing:-.2px;margin-bottom:16px;color:var(--text-1)}
-.account-avatar-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.account-avatar{
-  width:60px;height:60px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--purple),var(--orange));
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;font-weight:700;color:#fff;font-family:var(--font);
-}
-.pref-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
-.pref-row:last-child{border-bottom:none;padding-bottom:0}
-.pref-label{font-size:13px;font-weight:600;color:var(--text)}
-.pref-desc{font-size:11px;color:var(--t3);margin-top:1px}
 
 /* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar{width:6px;height:6px}
@@ -555,7 +486,6 @@ body.no-sidebar #main{
 .topbar-divider{flex-shrink:0}
 .landing-nav{flex-shrink:0;white-space:nowrap}
 .header-auth{flex-shrink:0}
-.header-user{flex-shrink:0}
 #hamburger{flex-shrink:0}
 .back-btn{flex-shrink:0}
 /* Give spacer true flex so it absorbs the gap */
@@ -598,21 +528,6 @@ body.no-sidebar .lp-section{overflow:visible}
 }
 .tip .pop::after{
   border-top-color: #1c0e36 !important;
-}
-
-/* ---- Account page: restore padding stripped by body.no-sidebar ---- */
-#page-account{
-  padding: 40px 48px !important;
-}
-.account-wrap{
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-/* ---- Login / Signup: small centering fix if needed ---------------- */
-#page-login,
-#page-signup{
-  padding: 0 !important;   /* auth-wrap handles its own flex centering */
 }
 
 /* ---- RSA key-size warning notice --------------------------------- */
@@ -685,21 +600,10 @@ textarea[rows="1"]:focus{
   display:flex;
   align-items:center;
 }
-.auth-logo{
-  display:flex;
-}
 /* ---- Hide dark-toggle CSS rules (button is removed, but clean up) - */
 
 /* ---- Anton logo in topbar ----------------------------------------- */
 /* ---- Anton logo in auth cards ------------------------------------- */
-.auth-logo { justify-content: center; margin-bottom: 16px; }
-.auth-logo-text {
-  font-family:'Montserrat',sans-serif;
-  font-size: 40px;
-  letter-spacing: 1.5px;
-  color: var(--text-1);
-  line-height: 1;
-}
 /* ---- GIF fills the hero visual box -------------------------------- */
 /* ---- Neumeriq.png in landing hero --------------------------------- */
 /* ---- Feedback section --------------------------------------------- */
@@ -2621,8 +2525,6 @@ body.sidebar-collapsed #sidebar .nav-label{ display:none !important; }
 body.sidebar-collapsed #sidebar .nav-link{
   font-size:0 !important;                 /* hides the text label, keeps the svg */
 }
-body.sidebar-collapsed #sidebar .sidebar-user{ justify-content:center; }
-body.sidebar-collapsed #sidebar .su-info{ display:none !important; }
 /* keep the menu icon active state subtle in collapsed mode */
 
 /* ── Chart maker: color swatches ── */
@@ -3679,9 +3581,6 @@ window.AT_BUILD = function(){
       Star on GitHub
     </a>
   </div>
-  <div class="header-user" id="header-user">
-    <button class="user-avatar-btn" id="user-avatar-btn" onclick="nav('account')" title="Account settings">U</button>
-  </div>
 </header>
 <div id="layout">
 <div id="sidebar">
@@ -3734,14 +3633,6 @@ window.AT_BUILD = function(){
     </div>
   </div>
   <div class="sidebar-bottom">
-    <div class="sidebar-user" id="sidebar-user" onclick="nav('account')" title="Account settings">
-      <div class="su-avatar" id="su-avatar">U</div>
-      <div class="su-info">
-        <div class="su-name" id="su-name">My Account</div>
-        <div class="su-email" id="su-email">Signed in</div>
-      </div>
-    </div>
-    <div id="sidebar-signin" style="display:none"></div>
   </div>
 </div>
 <div id="main">
@@ -3769,7 +3660,7 @@ window.AT_BUILD = function(){
           Explore Tools
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
-        <a class="lp-btn-bmc" href="https://www.buymeacoffee.com/neumeriq" target="_blank" rel="noopener">
+        <a class="lp-btn-bmc" href="https://buymeacoffee.com/jaswanthonk" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           Buy me a coffee
         </a>
@@ -4871,98 +4762,6 @@ Jun, 30</textarea>
   </div></div>
 </div>
 
-
-<!-- LOGIN -->
-<div id="page-login" class="page">
-  <div class="auth-wrap">
-    <div class="auth-card">
-      <div class="auth-logo"><span class="auth-logo-text">Neumeriq</span></div>
-      <h1>Welcome back</h1>
-      <p class="auth-sub">Sign in to sync preferences and tool history</p>
-      <button class="sso-btn" onclick="mockSSO('google')">
-        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-        Continue with Google
-      </button>
-      <button class="sso-btn" onclick="mockSSO('github')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        Continue with GitHub
-      </button>
-      <p class="auth-note">OAuth redirects require a server. This is a UI preview.</p>
-      <div class="auth-divider">or sign in with email</div>
-      <form onsubmit="loginWithEmail(event)">
-        <div class="field"><label>Email address</label><input type="text" id="login-email" placeholder="you@example.com" autocomplete="email"/></div>
-        <div class="field"><label>Password</label><div class="pw-wrap"><input type="password" id="login-pw" placeholder="Your password"/><button type="button" class="pw-show" onclick="togglePw('login-pw',this)">Show</button></div></div>
-        <button type="submit" class="btn btn-primary" style="width:100%;padding:11px;font-size:14px;justify-content:center;margin-top:4px">Sign in</button>
-      </form>
-      <p class="auth-footer">No account? <a onclick="nav('signup');return false;">Create one free</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- SIGNUP -->
-<div id="page-signup" class="page">
-  <div class="auth-wrap">
-    <div class="auth-card">
-      <div class="auth-logo"><span class="auth-logo-text">Neumeriq</span></div>
-      <h1>Create your account</h1>
-      <p class="auth-sub">Free forever. No credit card required.</p>
-      <button class="sso-btn" onclick="mockSSO('google')">
-        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-        Sign up with Google
-      </button>
-      <button class="sso-btn" onclick="mockSSO('github')">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        Sign up with GitHub
-      </button>
-      <p class="auth-note">OAuth redirects require a server. This is a UI preview.</p>
-      <div class="auth-divider">or sign up with email</div>
-      <form onsubmit="signupWithEmail(event)">
-        <div class="field"><label>Your name</label><input type="text" id="signup-name" placeholder="Alex Smith"/></div>
-        <div class="field"><label>Email address</label><input type="text" id="signup-email" placeholder="you@example.com" autocomplete="email"/></div>
-        <div class="field"><label>Password</label><div class="pw-wrap"><input type="password" id="signup-pw" placeholder="Min. 8 characters"/><button type="button" class="pw-show" onclick="togglePw('signup-pw',this)">Show</button></div></div>
-        <button type="submit" class="btn btn-primary" style="width:100%;padding:11px;font-size:14px;justify-content:center;margin-top:4px">Create account</button>
-      </form>
-      <p class="auth-footer">Already have an account? <a onclick="nav('login');return false;">Sign in</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- ACCOUNT -->
-<div id="page-account" class="page">
-  <div class="account-wrap">
-    <div class="account-header">
-      <h1>Account Settings</h1>
-      <p>Manage your profile and preferences</p>
-    </div>
-    <div class="account-card">
-      <h2>Profile</h2>
-      <div class="account-avatar-row">
-        <div class="account-avatar" id="account-avatar">U</div>
-        <div>
-          <div style="font-size:13px;font-weight:600;color:var(--text-1)" id="account-name-display">My Account</div>
-          <div style="font-size:12px;color:var(--t2);margin-top:2px" id="account-email-display">Not signed in</div>
-        </div>
-      </div>
-      <div class="field"><label>Display Name</label><input type="text" id="account-name" placeholder="Your name"/></div>
-      <div class="field"><label>Email Address</label><input type="text" id="account-email" placeholder="you@example.com"/></div>
-      <div class="field"><label>New Password <span style="font-weight:400;color:var(--t3)">(leave blank to keep current)</span></label><div class="pw-wrap"><input type="password" id="account-pw" placeholder="New password"/><button type="button" class="pw-show" onclick="togglePw('account-pw',this)">Show</button></div></div>
-      <div class="btn-row">
-        <button class="btn btn-primary" onclick="saveAccount()">Save changes</button>
-        <button class="btn btn-danger" onclick="signOut()">Sign out</button>
-      </div>
-    </div>
-    <div class="account-card">
-      <h2>Preferences</h2>
-
-      <div class="pref-row">
-        <div><div class="pref-label">Compact layout</div><div class="pref-desc">Reduce padding in tool pages</div></div>
-        <label class="tog-row" style="cursor:pointer">
-          <span class="tog"><input type="checkbox" id="pref-compact" onchange="toggleCompact(this.checked)"><span class="tog-track"></span></span>
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div>
 </div>
@@ -7512,13 +7311,6 @@ $$('.output').forEach(el=>{ if(!el.dataset.e) el.dataset.e=el.textContent.trim()
 console.log('Numerique v4 - 100% client-side.');
 
 /* ---- HELPERS ---- */
-function togglePw(id, btn) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  var show = el.type === 'password';
-  el.type = show ? 'text' : 'password';
-  btn.textContent = show ? 'Hide' : 'Show';
-}
 function scrollToCats() {
   var el = document.getElementById('lp-cats');
   if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -7537,92 +7329,6 @@ function toggleSidebar() {
   document.documentElement.setAttribute('data-theme', 'dark');
 })();
 
-/* ---- AUTH (localStorage mock) ---- */
-var authUser = null;
-function initAuth() {
-  var raw = localStorage.getItem('nq_user');
-  if (raw) { try { authUser = JSON.parse(raw); } catch(e) {} }
-  updateAuthUI();
-}
-function updateAuthUI() {
-  var ha = document.getElementById('header-auth');
-  var hu = document.getElementById('header-user');
-  var suDiv = document.getElementById('sidebar-user');
-  var siDiv = document.getElementById('sidebar-signin');
-  if (authUser) {
-    if (ha) ha.style.display = 'none';
-    if (hu) { hu.style.display = 'flex'; }
-    if (suDiv) suDiv.style.display = 'flex';
-    if (siDiv) siDiv.style.display = 'none';
-    var initial = (authUser.name || 'U').charAt(0).toUpperCase();
-    document.querySelectorAll('#user-avatar-btn,#su-avatar,#account-avatar').forEach(function(el){ el.textContent = initial; });
-    var sn = document.getElementById('su-name'); if (sn) sn.textContent = authUser.name || 'Account';
-    var se = document.getElementById('su-email'); if (se) se.textContent = authUser.email || '';
-    var dn = document.getElementById('account-name-display'); if (dn) dn.textContent = authUser.name || '';
-    var de = document.getElementById('account-email-display'); if (de) de.textContent = authUser.email || '';
-    var an = document.getElementById('account-name'); if (an) an.value = authUser.name || '';
-    var ae = document.getElementById('account-email'); if (ae) ae.value = authUser.email || '';
-  } else {
-    if (ha) ha.style.display = 'flex';
-    if (hu) hu.style.display = 'none';
-    if (suDiv) suDiv.style.display = 'none';
-    if (siDiv) siDiv.style.display = 'flex';
-  }
-}
-function signIn(name, email) {
-  authUser = { name: name, email: email };
-  localStorage.setItem('nq_user', JSON.stringify(authUser));
-  updateAuthUI();
-  nav('home');
-}
-function signOut() {
-  authUser = null;
-  localStorage.removeItem('nq_user');
-  updateAuthUI();
-  nav('home');
-}
-function saveAccount() {
-  if (!authUser) return;
-  var n = document.getElementById('account-name');
-  var e = document.getElementById('account-email');
-  if (n) authUser.name = n.value.trim();
-  if (e) authUser.email = e.value.trim();
-  localStorage.setItem('nq_user', JSON.stringify(authUser));
-  updateAuthUI();
-  var btn = event && event.target;
-  if (btn) { var orig = btn.textContent; btn.textContent = 'Saved!'; setTimeout(function(){ btn.textContent = orig; }, 1500); }
-}
-function loginWithEmail(e) {
-  e.preventDefault();
-  var email = document.getElementById('login-email').value.trim();
-  var pw = document.getElementById('login-pw').value;
-  if (!email || !pw) return;
-  var stored = localStorage.getItem('nq_user');
-  if (stored) {
-    var u = JSON.parse(stored);
-    if (u.email === email) { authUser = u; localStorage.setItem('nq_user', JSON.stringify(u)); updateAuthUI(); nav('home'); return; }
-  }
-  // No matching user - create one
-  signIn(email.split('@')[0], email);
-}
-function signupWithEmail(e) {
-  e.preventDefault();
-  var name = (document.getElementById('signup-name').value || '').trim();
-  var email = (document.getElementById('signup-email').value || '').trim();
-  if (!name || !email) return;
-  signIn(name, email);
-}
-function mockSSO(provider) {
-  var name = provider === 'google' ? 'Google User' : 'GitHub User';
-  signIn(name, name.toLowerCase().replace(' ', '.') + '@' + provider + '.com');
-}
-function toggleCompact(on) {
-  document.body.classList.toggle('compact', on);
-  localStorage.setItem('nq_compact', on ? '1' : '');
-}
-(function initCompact() {
-  if (localStorage.getItem('nq_compact')) { document.body.classList.add('compact'); var cb = document.getElementById('pref-compact'); if (cb) cb.checked = true; }
-})();
 
 /* ---- FILTER TOOLS ---- */
 function filterTools(q) {
@@ -7633,7 +7339,7 @@ function filterTools(q) {
 }
 
 /* ---- NAV PATCH: sidebar active state + layout mode ---- */
-var NO_SIDEBAR_PAGES = ['home','login','signup','account'];
+var NO_SIDEBAR_PAGES = ['home'];
 (function() {
   var _nav = nav;
   window.nav = function(id, opts) {
@@ -7863,8 +7569,6 @@ var NO_SIDEBAR_PAGES = ['home','login','signup','account'];
   new MutationObserver(observeCards).observe(document.body, { childList: true, subtree: true });
 })();
 
-/* ---- INIT ---- */
-initAuth();
 
 </script>
 
@@ -7996,7 +7700,7 @@ initAuth();
 (function(){
   /* The nav-patch IIFE in redesign2.js may run before DOM is ready.
      Re-apply the no-sidebar class and topbar state once everything's set. */
-  var NO_SIDEBAR = ['home','login','signup','account'];
+  var NO_SIDEBAR = ['home'];
   function applyMode(pageId){
     var ns = NO_SIDEBAR.indexOf(pageId) > -1;
     document.body.classList.toggle('no-sidebar', ns);
@@ -8118,7 +7822,7 @@ function submitBugReport(){
 }
 </script>
 
-<a id="bmc-float" href="https://www.buymeacoffee.com/neumeriq" target="_blank" rel="noopener" title="Buy me a coffee">
+<a id="bmc-float" href="https://buymeacoffee.com/jaswanthonk" target="_blank" rel="noopener" title="Buy me a coffee">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
     <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
